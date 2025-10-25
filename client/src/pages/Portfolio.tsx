@@ -86,25 +86,9 @@ export default function Portfolio() {
           </div>
           
           {/* Tagline */}
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
             Fresh Computer Science graduate passionate about building scalable web applications with modern technologies
           </p>
-
-          {/* Contact Info */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-10 text-white/90">
-            <a href="mailto:sammarsadaat@gmail.com" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-email">
-              <Mail className="w-5 h-5" />
-              <span className="text-sm md:text-base">sammarsadaat@gmail.com</span>
-            </a>
-            <a href="tel:+923187646305" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-phone">
-              <Phone className="w-5 h-5" />
-              <span className="text-sm md:text-base">+92 318 7646305</span>
-            </a>
-            <div className="flex items-center gap-2 px-4 py-2" data-testid="text-location">
-              <MapPin className="w-5 h-5" />
-              <span className="text-sm md:text-base">Islampura, Lahore</span>
-            </div>
-          </div>
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -355,6 +339,22 @@ export default function Portfolio() {
               <ExternalLink className="w-5 h-5 mr-2" />
               Download CV
             </Button>
+          </div>
+
+          {/* Contact Info */}
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-8 text-white/90">
+            <a href="mailto:sammarsadaat@gmail.com" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-email">
+              <Mail className="w-5 h-5" />
+              <span className="text-sm md:text-base">sammarsadaat@gmail.com</span>
+            </a>
+            <a href="tel:+923187646305" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-phone">
+              <Phone className="w-5 h-5" />
+              <span className="text-sm md:text-base">+92 318 7646305</span>
+            </a>
+            <div className="flex items-center gap-2 px-4 py-2" data-testid="text-location">
+              <MapPin className="w-5 h-5" />
+              <span className="text-sm md:text-base">Islampura, Lahore</span>
+            </div>
           </div>
 
           {/* Footer */}
