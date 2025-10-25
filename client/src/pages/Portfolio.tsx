@@ -1,7 +1,8 @@
-import { Mail, Phone, MapPin, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import workspaceImage from "@assets/generated_images/Developer_workspace_hero_image_e939cb41.png";
 
 export default function Portfolio() {
   const handleDownloadCV = () => {
@@ -52,78 +53,92 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-blue-700" />
-        
-        {/* Decorative Grid Pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
-
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          {/* Avatar */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <div className="w-48 h-48 rounded-full bg-white/10 backdrop-blur-sm border-4 border-white shadow-2xl flex items-center justify-center">
-                <span className="text-6xl font-bold text-white">MS</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <div>
+              {/* Name & Title */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-2 tracking-tight">
+                Hi, I'm
+              </h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">
+                Muhammad Samar Sadaat
+              </h1>
+              <div className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
+                MERN Stack Developer
               </div>
-              <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-                <CheckCircle2 className="w-8 h-8 text-white" />
+              
+              {/* Tagline */}
+              <p className="text-base md:text-lg text-foreground/70 mb-8 leading-relaxed max-w-xl">
+                Crafting scalable, high-performance web applications with modern technologies. Passionate about clean code, intuitive UX, and delivering exceptional digital experiences.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap items-center gap-4 mb-8">
+                <Button 
+                  size="lg"
+                  variant="default"
+                  onClick={() => {
+                    const projectsSection = document.querySelector('[data-testid="section-projects"]');
+                    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  data-testid="button-view-projects"
+                >
+                  View Projects
+                  <ArrowDown className="w-4 h-4 ml-2" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  onClick={handleDownloadCV}
+                  data-testid="button-download-cv"
+                >
+                  Download Resume
+                </Button>
+              </div>
+
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                <Button 
+                  size="icon"
+                  variant="outline"
+                  onClick={handleGithubClick}
+                  data-testid="button-github-icon"
+                >
+                  <Github className="w-5 h-5" />
+                </Button>
+                <Button 
+                  size="icon"
+                  variant="outline"
+                  onClick={() => window.open("https://linkedin.com", "_blank")}
+                  data-testid="button-linkedin"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </Button>
+                <Button 
+                  size="icon"
+                  variant="outline"
+                  onClick={() => window.location.href = "mailto:sammarsadaat@gmail.com"}
+                  data-testid="button-email-icon"
+                >
+                  <Mail className="w-5 h-5" />
+                </Button>
               </div>
             </div>
-          </div>
 
-          {/* Name & Title */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
-            Muhammad Samar Sadaat
-          </h1>
-          <div className="text-2xl md:text-3xl font-semibold mb-6">
-            <span className="bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300 bg-clip-text text-transparent">
-              MERN Stack Developer
-            </span>
-          </div>
-          
-          {/* Tagline */}
-          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Fresh Computer Science graduate passionate about building scalable web applications with modern technologies
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button 
-              size="lg" 
-              onClick={handleDownloadCV}
-              className="bg-white/20 backdrop-blur-md text-white border-2 border-white shadow-xl"
-              data-testid="button-download-cv"
-            >
-              <ExternalLink className="w-5 h-5 mr-2" />
-              View CV
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={handleGithubClick}
-              className="bg-white/10 backdrop-blur-md text-white border-2 border-white/50"
-              data-testid="button-github"
-            >
-              <Github className="w-5 h-5 mr-2" />
-              GitHub Profile
-            </Button>
-          </div>
-
-          {/* Floating Tech Badges */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
-            {["React", "Node.js", "MongoDB", "Express.js"].map((tech) => (
-              <Badge 
-                key={tech} 
-                className="bg-white/20 backdrop-blur-md text-white border border-white/30 px-4 py-2 text-sm font-medium hover-elevate"
-                data-testid={`badge-tech-${tech.toLowerCase().replace(/\./g, '')}`}
-              >
-                {tech}
-              </Badge>
-            ))}
+            {/* Right Column - Workspace Image */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={workspaceImage} 
+                  alt="Developer workspace with laptop showing code" 
+                  className="w-full h-auto object-cover"
+                  data-testid="img-workspace"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
