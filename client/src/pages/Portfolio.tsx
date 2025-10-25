@@ -14,8 +14,8 @@ export default function Portfolio() {
   };
 
   const technicalSkills = [
-    { category: "Frontend", icon: Code2, skills: ["ReactJS", "JavaScript (ES6+)", "HTML5", "CSS"] },
-    { category: "Backend", icon: Server, skills: ["Node.js", "Express.js"] },
+    { category: "Frontend", icon: Code2, skills: ["ReactJS", "HTML5", "Tailwind CSS"] },
+    { category: "Backend", icon: Server, skills: ["JavaScript (ES6+)", "Node.js", "Express.js"] },
     { category: "Database", icon: Database, skills: ["MongoDB"] },
   ];
 
@@ -95,7 +95,7 @@ export default function Portfolio() {
                   onClick={handleDownloadCV}
                   data-testid="button-download-cv"
                 >
-                  Download Resume
+                  Resume
                 </Button>
               </div>
 
@@ -167,7 +167,7 @@ export default function Portfolio() {
                   <div className="text-sm text-muted-foreground">Experience</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary">2</div>
+                  <div className="text-3xl font-bold text-primary">3</div>
                   <div className="text-sm text-muted-foreground">Major Projects</div>
                 </div>
                 <div>
@@ -181,7 +181,7 @@ export default function Portfolio() {
       </section>
 
       {/* Education Section */}
-      <section className="py-16 md:py-24 bg-muted/30" data-testid="section-education">
+      {/* <section className="py-16 md:py-24 bg-muted/30" data-testid="section-education">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Education</h2>
           <Card className="p-8 max-w-3xl mx-auto hover-elevate" data-testid="card-education">
@@ -196,7 +196,7 @@ export default function Portfolio() {
             </div>
           </Card>
         </div>
-      </section>
+      </section> */}
 
       {/* Skills Section */}
       <section className="py-16 md:py-24 bg-background" data-testid="section-skills">
@@ -332,9 +332,24 @@ export default function Portfolio() {
           <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
-          
+          {/* Contact Info */}
+          <div className="flex justify-center gap-4 md:gap-6 mb-8 text-white/90">
+            <a href="mailto:sammarsadaat@gmail.com" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-email">
+              <Mail className="w-5 h-5" />
+              <span className="text-sm md:text-base">sammarsadaat@gmail.com</span>
+            </a>
+            <a href="tel:+923187646305" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-phone">
+              <Phone className="w-5 h-5" />
+              <span className="text-sm md:text-base">+92 318 7646305</span>
+            </a>
+            <div className="flex items-center gap-2 px-4 py-2" data-testid="text-location">
+              <MapPin className="w-5 h-5" />
+              <span className="text-sm md:text-base">Islampura, Lahore</span>
+            </div>
+          </div>
+
           {/* Contact Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+          {/* <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <Button 
               size="lg"
               onClick={handleGithubClick}
@@ -354,29 +369,13 @@ export default function Portfolio() {
               <ExternalLink className="w-5 h-5 mr-2" />
               Download CV
             </Button>
-          </div>
-
-          {/* Contact Info */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-8 text-white/90">
-            <a href="mailto:sammarsadaat@gmail.com" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-email">
-              <Mail className="w-5 h-5" />
-              <span className="text-sm md:text-base">sammarsadaat@gmail.com</span>
-            </a>
-            <a href="tel:+923187646305" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-phone">
-              <Phone className="w-5 h-5" />
-              <span className="text-sm md:text-base">+92 318 7646305</span>
-            </a>
-            <div className="flex items-center gap-2 px-4 py-2" data-testid="text-location">
-              <MapPin className="w-5 h-5" />
-              <span className="text-sm md:text-base">Islampura, Lahore</span>
-            </div>
-          </div>
+          </div> */}
 
           {/* Footer */}
           <div className="pt-8 border-t border-white/20">
             <p className="text-white/70 text-sm">
-              © {new Date().getFullYear()} Muhammad Samar Sadaat. Built with React, TypeScript & Tailwind CSS.
-            </p>
+              © {new Date().getFullYear()} Muhammad Samar Sadaat.
+              </p>
           </div>
         </div>
       </section>
