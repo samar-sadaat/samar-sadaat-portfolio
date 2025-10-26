@@ -29,7 +29,8 @@ export default function Portfolio() {
     {
       title: "Student LMS",
       subtitle: "Learning Management System",
-      tech: ["React", "Node.js", "Express.js", "MongoDB"],
+      liveUrl: "https://school-lms-five.vercel.app",
+      tech: ["ReactJs", "NodeJs", "ExpressJs", "MongoDB"],
       features: [
         "Built a comprehensive learning management system for students and teachers, covering course management",
         "Implemented secure authentication and role-based access control",
@@ -40,7 +41,8 @@ export default function Portfolio() {
     {
       title: "Social Media App",
       subtitle: "Real-time Social Platform",
-      tech: ["React", "Node.js", "WebSockets", "MongoDB"],
+      liveUrl: "https://social-media-two-steel.vercel.app",
+      tech: ["React", "NodeJs", "WebSockets", "MongoDB"],
       features: [
         "Built a real-time social media application featuring live posts, comments, and notifications",
         "Integrated WebSockets for instant, real-time data synchronization between users",
@@ -69,7 +71,7 @@ export default function Portfolio() {
               <div className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
                 MERN Stack Developer
               </div>
-              
+
               {/* Tagline */}
               <p className="text-base md:text-lg text-foreground/70 mb-8 leading-relaxed max-w-xl">
                 Crafting scalable, high-performance web applications with modern technologies. Passionate about clean code, intuitive UX, and delivering exceptional digital experiences.
@@ -77,7 +79,7 @@ export default function Portfolio() {
 
               {/* CTAs */}
               <div className="flex flex-wrap items-center gap-4 mb-8">
-                <Button 
+                <Button
                   size="lg"
                   variant="default"
                   onClick={() => {
@@ -89,8 +91,8 @@ export default function Portfolio() {
                   View Projects
                   <ArrowDown className="w-4 h-4 ml-2" />
                 </Button>
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   variant="outline"
                   onClick={handleDownloadCV}
                   data-testid="button-download-cv"
@@ -101,7 +103,7 @@ export default function Portfolio() {
 
               {/* Social Icons */}
               <div className="flex items-center gap-3">
-                <Button 
+                <Button
                   size="icon"
                   variant="outline"
                   onClick={handleGithubClick}
@@ -109,7 +111,7 @@ export default function Portfolio() {
                 >
                   <Github className="w-5 h-5" />
                 </Button>
-                <Button 
+                <Button
                   size="icon"
                   variant="outline"
                   onClick={() => window.open("https://linkedin.com", "_blank")}
@@ -117,7 +119,7 @@ export default function Portfolio() {
                 >
                   <Linkedin className="w-5 h-5" />
                 </Button>
-                <Button 
+                <Button
                   size="icon"
                   variant="outline"
                   onClick={() => window.location.href = "mailto:sammarsadaat@gmail.com"}
@@ -131,9 +133,9 @@ export default function Portfolio() {
             {/* Right Column - Workspace Image */}
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={workspaceImage} 
-                  alt="Developer workspace with laptop showing code" 
+                <img
+                  src={workspaceImage}
+                  alt="Developer workspace with laptop showing code"
                   className="w-full h-auto object-cover"
                   data-testid="img-workspace"
                 />
@@ -202,7 +204,7 @@ export default function Portfolio() {
       <section className="py-16 md:py-24 bg-background" data-testid="section-skills">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Technical Skills</h2>
-          
+
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {technicalSkills.map((skillGroup) => (
               <Card key={skillGroup.category} className="p-6 hover-elevate" data-testid={`card-skill-${skillGroup.category.toLowerCase()}`}>
@@ -243,23 +245,23 @@ export default function Portfolio() {
       <section className="py-16 md:py-24 bg-muted/30" data-testid="section-experience">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Work Experience</h2>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline Line */}
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20" />
-              
+
               <Card className="p-8 hover-elevate relative" data-testid="card-experience">
                 {/* Timeline Dot */}
                 <div className="absolute left-0 top-8 w-16 h-16 rounded-full bg-primary flex items-center justify-center">
                   <Code2 className="w-8 h-8 text-primary-foreground" />
                 </div>
-                
+
                 <div className="ml-24">
                   <Badge className="mb-3" data-testid="badge-duration">6 months</Badge>
                   <h3 className="text-2xl font-bold text-foreground mb-2">MERN Stack Developer</h3>
                   <p className="text-lg text-muted-foreground mb-4">Full-Stack Web Development</p>
-                  
+
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -285,7 +287,7 @@ export default function Portfolio() {
       <section className="py-16 md:py-24 bg-background" data-testid="section-projects">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Projects</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={project.title} className="overflow-hidden hover-elevate transition-all" data-testid={`card-project-${index}`}>
@@ -295,11 +297,11 @@ export default function Portfolio() {
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
                   }} />
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-foreground mb-1">{project.title}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{project.subtitle}</p>
-                  
+
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
@@ -308,7 +310,7 @@ export default function Portfolio() {
                       </Badge>
                     ))}
                   </div>
-                  
+
                   {/* Features */}
                   <ul className="space-y-2">
                     {project.features.map((feature, idx) => (
@@ -318,6 +320,12 @@ export default function Portfolio() {
                       </li>
                     ))}
                   </ul>
+                <Button size="lg"
+                  variant="default"
+                  className="mt-4"
+                  onClick={() => window.open(project.liveUrl, "_blank")}>
+                  Live
+                </Button>
                 </div>
               </Card>
             ))}
@@ -375,7 +383,7 @@ export default function Portfolio() {
           <div className="pt-8 border-t border-white/20">
             <p className="text-white/70 text-sm">
               © {new Date().getFullYear()} Muhammad Samar Sadaat.
-              </p>
+            </p>
           </div>
         </div>
       </section>
