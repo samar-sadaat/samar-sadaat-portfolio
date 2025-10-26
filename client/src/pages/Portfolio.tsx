@@ -1,8 +1,9 @@
-import { Mail, Phone, MapPin, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown, Wrench, Brain, MessageCircle, Sparkles, BookOpen } from "lucide-react";
+import { Mail, Phone, MapPin, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown, Wrench, Brain, Sparkles, BookOpen, UserCog  } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import workspaceImage from "@assets/generated_images/Developer_workspace_hero_image_e939cb41.png";
+import Navbar from "./Navbar";
 
 export default function Portfolio() {
   const handleDownloadCV = () => {
@@ -25,7 +26,7 @@ export default function Portfolio() {
     { name: "Team Collaboration", icon: Users },
     { name: "Problem Solving", icon: Lightbulb },
     { name: "Time Management", icon: Clock },
-    { name: "Communication", icon: MessageCircle },
+    { name: "Leadership", icon:  UserCog },
     { name: "Creativity", icon: Sparkles },
     { name: "Continuous Learning", icon: BookOpen }
   ];
@@ -58,7 +59,9 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-8">
+      {/* Top Navbar */}
+      <Navbar />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
         {/* Content */}
@@ -151,7 +154,8 @@ export default function Portfolio() {
       </section>
 
       {/* About Me Section */}
-      <section className="py-16 md:py-24 bg-background" data-testid="section-summary">
+      <section id="about" className="py-16 md:py-24 bg-background" data-testid="section-summary">
+        {/* <section className="py-16 md:py-24 bg-background" data-testid="section-summary"> */}
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             {/* About Me Text */}
@@ -241,9 +245,13 @@ export default function Portfolio() {
 
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">Soft Skills</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {softSkills.map((skill) => (
-                <Card key={skill.name} className="p-6 text-center hover-elevate" data-testid={`card-soft-skill-${skill.name.toLowerCase().replace(/ /g, '-')}`}>
+                <Card
+                  key={skill.name}
+                  className="p-6 text-center hover-elevate"
+                  data-testid={`card-soft-skill-${skill.name.toLowerCase().replace(/ /g, '-')}`}
+                >
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                     <skill.icon className="w-8 h-8 text-primary" />
                   </div>
@@ -298,7 +306,7 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-16 md:py-24 bg-background" data-testid="section-projects">
+      <section id="projects" className="py-16 md:py-24 bg-background" data-testid="section-projects">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Projects</h2>
 
@@ -348,7 +356,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact/Footer Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-purple-600 via-blue-600 to-blue-700 text-white" data-testid="section-contact">
+      <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-purple-600 via-blue-600 to-blue-700 text-white" data-testid="section-contact">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Connect</h2>
           <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
