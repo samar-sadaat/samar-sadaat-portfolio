@@ -333,7 +333,7 @@ export default function Portfolio() {
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
           {/* Contact Info */}
-          <div className="flex justify-center gap-4 md:gap-6 mb-8 text-white/90">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8 text-white/90">
             <a href="mailto:sammarsadaat@gmail.com" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-email">
               <Mail className="w-5 h-5" />
               <span className="text-sm md:text-base">sammarsadaat@gmail.com</span>
