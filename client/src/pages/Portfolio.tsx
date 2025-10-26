@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown } from "lucide-react";
+import { Mail, Phone, MapPin, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown, Wrench, Brain, MessageCircle, Sparkles, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,15 +14,20 @@ export default function Portfolio() {
   };
 
   const technicalSkills = [
-    { category: "Frontend", icon: Code2, skills: ["ReactJS", "HTML5", "Tailwind CSS"] },
-    { category: "Backend", icon: Server, skills: ["JavaScript (ES6+)", "Node.js", "Express.js"] },
-    { category: "Database", icon: Database, skills: ["MongoDB"] },
+    { category: "Frontend", icon: Code2, skills: ["JavaScript (ES6+)", "ReactJS", "HTML5", "Tailwind CSS"] },
+    { category: "Backend", icon: Server, skills: ["Node.js", "Express.js", "RESTful APIs", "WebSockets"] },
+    { category: "Database & ODM", icon: Database, skills: ["MongoDB", "Mongoose"] },
+    { category: "Tools", icon: Wrench, skills: ["Git", "GitHub", "VS Code", "Postman", "Vercel"] },
+    { category: "Other", icon: Brain, skills: ["JWT Authentication", "API Integration", "Responsive Design"] },
   ];
 
   const softSkills = [
     { name: "Team Collaboration", icon: Users },
     { name: "Problem Solving", icon: Lightbulb },
     { name: "Time Management", icon: Clock },
+    { name: "Communication", icon: MessageCircle },
+    { name: "Creativity", icon: Sparkles },
+    { name: "Continuous Learning", icon: BookOpen }
   ];
 
   const projects = [
@@ -145,18 +150,27 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Professional Summary Section */}
+      {/* About Me Section */}
       <section className="py-16 md:py-24 bg-background" data-testid="section-summary">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Summary Text */}
+            {/* About Me Text */}
             <div className="md:col-span-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Professional Summary</h2>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                Fresh Computer Science graduate with hands-on experience in ReactJS, Node.js, Express.js,
-                and MongoDB through academic and personal projects. Passionate about building scalable
-                web applications, eager to learn in collaborative environments, and driven to grow as a
-                MERN Stack Developer.
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">About Me</h2>
+              <p className="text-lg text-foreground/80 leading-relaxed text-justify">
+                I’m a passionate MERN Stack Developer with hands-on experience in MongoDB,
+                Express.js, React.js, and Node.js. I love building scalable, high-performance
+                web applications that deliver seamless user experiences and solve real-world problems.
+                <br />
+                <br />
+                My experience includes developing dynamic front-end interfaces, designing RESTful
+                APIs, and working with databases to create efficient full-stack solutions. I’m driven
+                by clean code, continuous learning, and innovation, and I thrive in collaborative
+                environments that challenge me to grow and create impact.
+                <br />
+                <br />
+                I’m always exploring new technologies and best practices to craft modern, reliable,
+                and elegant web solutions that make a difference.
               </p>
             </div>
 
@@ -320,12 +334,12 @@ export default function Portfolio() {
                       </li>
                     ))}
                   </ul>
-                <Button size="lg"
-                  variant="default"
-                  className="mt-4"
-                  onClick={() => window.open(project.liveUrl, "_blank")}>
-                  Live
-                </Button>
+                  <Button size="lg"
+                    variant="default"
+                    className="mt-4"
+                    onClick={() => window.open(project.liveUrl, "_blank")}>
+                    Live
+                  </Button>
                 </div>
               </Card>
             ))}
@@ -352,7 +366,7 @@ export default function Portfolio() {
             </a>
             <div className="flex items-center gap-2 px-4 py-2" data-testid="text-location">
               <MapPin className="w-5 h-5" />
-              <span className="text-sm md:text-base">Islampura, Lahore</span>
+              <span className="text-sm md:text-base">Lahore</span>
             </div>
           </div>
 
