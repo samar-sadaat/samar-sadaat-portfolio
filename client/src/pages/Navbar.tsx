@@ -3,34 +3,7 @@ import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleRef = useRef<HTMLButtonElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickAnywhere = (e: MouseEvent | TouchEvent) => {
-      const target = e.target as Node;
-
-      // If click is inside menu or toggle button → ignore
-      if (
-        menuRef.current?.contains(target) ||
-        toggleRef.current?.contains(target)
-      ) {
-        return;
-      }
-
-      // Otherwise close
-      setIsOpen(false);
-    };
-
-    if (isOpen) {
-      // Use capture phase → ensures this fires before inner onClicks
-      document.addEventListener("click", handleClickAnywhere, true);
-    }
-
-    return () => {
-      document.removeEventListener("click", handleClickAnywhere, true);
-    };
-  }, [isOpen]);  
 
   const handleScroll = (id: string) => {
     const section = document.querySelector(id);
