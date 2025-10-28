@@ -1,4 +1,6 @@
-import { Mail, Phone, MapPin, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown, Wrench, Brain, Sparkles, BookOpen, UserCog  } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown, Wrench, Brain, Sparkles, BookOpen, UserCog } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,11 +9,23 @@ import Navbar from "./Navbar";
 
 export default function Portfolio() {
   const handleDownloadCV = () => {
-    window.open("/Muhammad Samar Sadaat_1761426776568.pdf", "_blank");
+    window.open("/Muhammad Samar Sadaat.pdf", "_blank");
   };
 
   const handleGithubClick = () => {
     window.open("https://github.com/samar-sadaat", "_blank");
+  };
+
+  const handleFacebookClick = () => {
+    window.open("https://www.facebook.com/share/1BQzefRCy4/", "_blank");
+  };
+
+  const handleInstaClick = () => {
+    window.open("https://www.instagram.com/samar._.sadaat?igsh=MXd6cjdlNm90b20xbw== ", "_blank");
+  };
+
+  const handleLinkedinClick = () => {
+    window.open("https://www.linkedin.com/", "_blank");
   };
 
   const technicalSkills = [
@@ -26,7 +40,7 @@ export default function Portfolio() {
     { name: "Team Collaboration", icon: Users },
     { name: "Problem Solving", icon: Lightbulb },
     { name: "Time Management", icon: Clock },
-    { name: "Leadership", icon:  UserCog },
+    { name: "Leadership", icon: UserCog },
     { name: "Creativity", icon: Sparkles },
     { name: "Continuous Learning", icon: BookOpen }
   ];
@@ -122,10 +136,10 @@ export default function Portfolio() {
                 <Button
                   size="icon"
                   variant="outline"
-                  onClick={() => window.open("https://linkedin.com", "_blank")}
-                  data-testid="button-linkedin"
+                  onClick={() => window.open("https://wa.me/923187646305?text=Hello!", "_blank")}
+                  data-testid="button-whatsapp"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5" />
                 </Button>
                 <Button
                   size="icon"
@@ -379,27 +393,49 @@ export default function Portfolio() {
           </div>
 
           {/* Contact Buttons */}
-          {/* <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
-            <Button 
-              size="lg"
-              onClick={handleGithubClick}
-              className="bg-white/20 backdrop-blur-md text-white border-2 border-white"
-              data-testid="button-github-footer"
-            >
-              <Github className="w-5 h-5 mr-2" />
-              GitHub
-            </Button>
-            <Button 
-              size="lg"
-              onClick={handleDownloadCV}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+            <Button
+              size="icon"
               variant="outline"
-              className="bg-white/10 backdrop-blur-md text-white border-2 border-white/50"
-              data-testid="button-cv-footer"
+              onClick={handleGithubClick}
+              data-testid="button-github-icon"
             >
-              <ExternalLink className="w-5 h-5 mr-2" />
-              Download CV
+              <Github className="w-5 h-5" />
             </Button>
-          </div> */}
+            <Button
+              size="icon"
+              onClick={handleLinkedinClick}
+              variant="outline"
+              data-testid="button-linkedin-footer"
+            >
+              <Linkedin className="w-5 h-5" />
+            </Button>
+            <Button
+              size="icon"
+              onClick={handleFacebookClick}
+              variant="outline"
+              data-testid="button-facebook-footer"
+
+            >
+              <Facebook className="w-5 h-5" />
+            </Button>
+            <Button
+              size="icon"
+              variant="outline"
+              data-testid="button-insta-footer"
+              onClick={handleInstaClick}
+            >
+              <Instagram className="w-5 h-5" />
+            </Button>
+            <Button
+              size="icon"
+              variant="outline"
+              onClick={() => window.open("https://wa.me/923187646305?text=Hello!", "_blank")}
+              data-testid="button-whatsapp"
+            >
+              <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5" />
+            </Button>
+          </div>
 
           {/* Footer */}
           <div className="pt-8 border-t border-white/20">
