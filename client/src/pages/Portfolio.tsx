@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown, Wrench, Brain, Sparkles, BookOpen, UserCog } from "lucide-react";
+import { Mail, Phone, MapPin, Radio, Facebook, Instagram, Github, ExternalLink, CheckCircle2, Code2, Server, Database, Users, Lightbulb, Clock, Linkedin, ArrowDown, Wrench, SlidersHorizontal, Sparkles, BookOpen, UserCog, BriefcaseBusiness } from "lucide-react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Button } from "@/components/ui/button";
@@ -33,16 +33,16 @@ export default function Portfolio() {
     { category: "Backend", icon: Server, skills: ["Node.js", "Express.js", "RESTful APIs", "WebSockets"] },
     { category: "Database & ODM", icon: Database, skills: ["MongoDB", "Mongoose"] },
     { category: "Tools", icon: Wrench, skills: ["Git", "GitHub", "VS Code", "Postman", "Vercel"] },
-    { category: "Other", icon: Brain, skills: ["JWT Authentication", "API Integration", "Responsive Design"] },
+    { category: "Other", icon: SlidersHorizontal, skills: ["JWT Authentication", "API Integration", "Responsive Design"] },
   ];
 
   const softSkills = [
     { name: "Team Collaboration", icon: Users },
+    { name: "Continuous Learning", icon: BookOpen },
+    { name: "Leadership", icon: UserCog },
     { name: "Problem Solving", icon: Lightbulb },
     { name: "Time Management", icon: Clock },
-    { name: "Leadership", icon: UserCog },
     { name: "Creativity", icon: Sparkles },
-    { name: "Continuous Learning", icon: BookOpen }
   ];
 
   const projects = [
@@ -157,7 +157,7 @@ export default function Portfolio() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={workspaceImage}
-                  alt="Developer workspace with laptop showing code"
+                  alt="Developer"
                   className="w-full h-auto object-cover"
                   data-testid="img-workspace"
                 />
@@ -287,29 +287,51 @@ export default function Portfolio() {
               {/* Timeline Line */}
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20" />
 
-              <Card className="p-8 hover-elevate relative" data-testid="card-experience">
-                {/* Timeline Dot */}
-                <div className="absolute left-0 top-8 w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                  <Code2 className="w-8 h-8 text-primary-foreground" />
+              <Card
+                className="p-8 relative flex flex-col sm:flex-row sm:items-start sm:gap-6 hover:shadow-lg transition-all duration-300"
+                data-testid="card-experience"
+              >
+                {/* Timeline Icon */}
+                <div className="flex items-center justify-center sm:justify-start">
+                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-4 sm:mb-0 sm:mt-4">
+                    <BriefcaseBusiness className="w-8 h-8 text-primary-foreground" />
+                  </div>
                 </div>
 
-                <div className="ml-24">
-                  <Badge className="mb-3" data-testid="badge-duration">6 months</Badge>
+                {/* Content */}
+                <div className="flex-1">
                   <h3 className="text-2xl font-bold text-foreground mb-2">MERN Stack Developer</h3>
-                  <p className="text-lg text-muted-foreground mb-4">Full-Stack Web Development</p>
+                  <p className="text-lg text-muted-foreground mb-4">
+                    Gained extensive hands-on experience in full-stack web application development.
+                  </p>
 
                   <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
+                    <li className="flex items-start gap-3 text-justify">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground/80">Gained hands-on experience in full-stack web application development</span>
+                      <span className="text-foreground/80">
+                        Contributed to the development and maintenance of dynamic web modules with a focus on performance and scalability.
+                      </span>
                     </li>
-                    <li className="flex items-start gap-3">
+
+                    <li className="flex items-start gap-3 text-justify">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground/80">Assisted in developing and maintaining web modules and optimizing MongoDB queries</span>
+                      <span className="text-foreground/80">
+                        Collaborated within a cross-functional team to design, develop, and deploy real-time features using WebSockets.
+                      </span>
                     </li>
-                    <li className="flex items-start gap-3">
+
+                    <li className="flex items-start gap-3 text-justify">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground/80">Collaborated in a team to build scalable applications and integrate real-time features using WebSockets</span>
+                      <span className="text-foreground/80">
+                        Optimized MongoDB queries to improve data retrieval efficiency and overall backend performance.
+                      </span>
+                    </li>
+
+                    <li className="flex items-start gap-3 text-justify">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        Participated in code reviews, debugging, and version control using Git & GitHub.
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -356,10 +378,13 @@ export default function Portfolio() {
                       </li>
                     ))}
                   </ul>
-                  <Button size="lg"
+                  <Button
+                    size="lg"
                     variant="default"
-                    className="mt-4"
-                    onClick={() => window.open(project.liveUrl, "_blank")}>
+                    className="mt-4 flex items-center gap-2"
+                    onClick={() => window.open(project.liveUrl, "_blank")}
+                  >
+                    <Radio style={{ width: "25px", height: "25px", color: "white" }} />
                     Live
                   </Button>
                 </div>
@@ -377,21 +402,33 @@ export default function Portfolio() {
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
           {/* Contact Info */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8 text-white/90">
-            <a href="mailto:sammarsadaat@gmail.com" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-email">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 md:gap-6 mb-8 text-white/90">
+            <a
+              href="mailto:sammarsadaat@gmail.com"
+              className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all"
+              data-testid="link-email"
+            >
               <Mail className="w-5 h-5" />
               <span className="text-sm md:text-base">sammarsadaat@gmail.com</span>
             </a>
-            <a href="tel:+923187646305" className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all" data-testid="link-phone">
+
+            <a
+              href="tel:+923187646305"
+              className="flex items-center gap-2 hover-elevate active-elevate-2 px-4 py-2 rounded-lg transition-all"
+              data-testid="link-phone"
+            >
               <Phone className="w-5 h-5" />
               <span className="text-sm md:text-base">+92 318 7646305</span>
             </a>
-            <div className="flex items-center gap-2 px-4 py-2" data-testid="text-location">
+
+            <div
+              className="flex items-center gap-2 px-4 py-2"
+              data-testid="text-location"
+            >
               <MapPin className="w-5 h-5" />
               <span className="text-sm md:text-base">Lahore</span>
             </div>
           </div>
-
           {/* Contact Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <Button
@@ -412,6 +449,14 @@ export default function Portfolio() {
             </Button>
             <Button
               size="icon"
+              variant="outline"
+              onClick={() => window.open("https://wa.me/923187646305?text=Hello!", "_blank")}
+              data-testid="button-whatsapp"
+            >
+              <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5" />
+            </Button>
+            <Button
+              size="icon"
               onClick={handleFacebookClick}
               variant="outline"
               data-testid="button-facebook-footer"
@@ -426,14 +471,6 @@ export default function Portfolio() {
               onClick={handleInstaClick}
             >
               <Instagram className="w-5 h-5" />
-            </Button>
-            <Button
-              size="icon"
-              variant="outline"
-              onClick={() => window.open("https://wa.me/923187646305?text=Hello!", "_blank")}
-              data-testid="button-whatsapp"
-            >
-              <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5" />
             </Button>
           </div>
 
