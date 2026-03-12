@@ -6,7 +6,7 @@ export default function Experience() {
   const experiences = [
     {
       title: "Backend Developer (Node.js) - The Nexus Solution",
-      duration: "Nov 2025 – Present",
+      duration: "Nov 2025 – Feb 2026",
       points: [
         "Develop and maintain backend services using Node.js, Express, and MongoDB for production systems.",
         "Optimize database performance through query tuning, indexing, and schema design.",
