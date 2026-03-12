@@ -10,7 +10,6 @@ export default function Hero() {
   const yMotion = useTransform(scrollY, [0, 300], [0, 20]);
 
   const handleDownloadCV = () => window.open("/muhammad-samar-sadaat.pdf", "_blank");
-  // const handleDownloadCV = () => window.open("/Muhammad Samar Sadaat.pdf", "_blank");
   const handleGithubClick = () => window.open("https://github.com/samar-sadaat", "_blank");
 
   return (
