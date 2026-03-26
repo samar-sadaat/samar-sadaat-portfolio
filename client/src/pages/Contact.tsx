@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   const handleGithubClick = () => window.open("https://github.com/samar-sadaat", "_blank");
-  const handleLinkedinClick = () => window.open("https://www.linkedin.com/", "_blank");
+  const handleLinkedinClick = () => window.open("https://www.linkedin.com/in/muhammadsamarsadaat", "_blank");
   const handleFacebookClick = () => window.open("https://www.facebook.com/share/1BQzefRCy4/", "_blank");
   const handleInstaClick = () => window.open("https://www.instagram.com/samar._.sadaat", "_blank");
 
@@ -16,7 +16,7 @@ export default function Contact() {
       className="py-16 md:py-24 bg-gradient-to-br from-purple-600 via-blue-600 to-blue-700 text-white"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Connect</h2>

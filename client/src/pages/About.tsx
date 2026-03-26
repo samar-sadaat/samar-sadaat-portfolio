@@ -47,7 +47,7 @@ export default function About() {
       className="py-16 md:py-24 bg-background"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
         

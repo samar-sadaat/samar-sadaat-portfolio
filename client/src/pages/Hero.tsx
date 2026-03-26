@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Mail } from "lucide-react";
+import { ArrowDown, Github, Mail, Linkedin } from "lucide-react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import workspaceImage from "@assets/generated_images/Developer_workspace_hero_image_e939cb41.png";
@@ -9,14 +9,15 @@ export default function Hero() {
   const { scrollY } = useScroll();
   const yMotion = useTransform(scrollY, [0, 300], [0, 20]);
 
-  const handleDownloadCV = () => window.open("/muhammad-samar-sadaat.pdf", "_blank");
+  const handleDownloadCV = () => window.open("/cv", "_blank");
   const handleGithubClick = () => window.open("https://github.com/samar-sadaat", "_blank");
+  const handleLinkedinClick = () => window.open("https://www.linkedin.com/in/muhammadsamarsadaat", "_blank");
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Column - Text */}
           <div>
             <motion.h1
@@ -66,7 +67,7 @@ export default function Hero() {
                 size="lg"
                 variant="default"
                 onClick={() => {
-                  const projectsSection = document.querySelector('[data-testid="section-projects"]');
+                  const projectsSection = document.querySelector('#projects');
                   projectsSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
@@ -85,9 +86,12 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
               className="flex items-center gap-3"
             >
+              <Button size="icon" variant="outline" onClick={handleLinkedinClick}><Linkedin className="w-5 h-5" /></Button>
+
               <Button size="icon" variant="outline" onClick={handleGithubClick}>
                 <Github className="w-5 h-5" />
               </Button>
+
               <Button
                 size="icon"
                 variant="outline"
@@ -95,13 +99,14 @@ export default function Hero() {
               >
                 <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5" />
               </Button>
-              <Button
+
+              {/* <Button
                 size="icon"
                 variant="outline"
                 onClick={() => (window.location.href = "mailto:sammarsadaat@gmail.com")}
               >
                 <Mail className="w-5 h-5" />
-              </Button>
+              </Button> */}
             </motion.div>
           </div>
 

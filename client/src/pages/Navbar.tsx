@@ -53,7 +53,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center space-x-8 text-lg font-medium text-foreground/80">
           <li className="cursor-pointer hover:text-primary" onClick={() => handleScroll('#about')}>About</li>
-          <li className="cursor-pointer hover:text-primary" onClick={() => handleScroll('#projects')}>Projects</li>
+          <li className="cursor-pointer hover:text-primary" onClick={() => handleScroll('projects')}>Projects</li>
           <li className="cursor-pointer hover:text-primary" onClick={() => handleScroll('#contact')}>Contact</li>
         </ul>
 

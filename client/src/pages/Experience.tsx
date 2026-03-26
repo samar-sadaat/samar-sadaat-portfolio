@@ -30,10 +30,10 @@ export default function Experience() {
       className="py-16 md:py-24 bg-muted/30"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
           Work Experience
         </h2>
 
